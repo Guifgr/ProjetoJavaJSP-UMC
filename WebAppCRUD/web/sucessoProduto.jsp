@@ -11,18 +11,48 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Response</title>
     </head>
     <body>
-        <% String mensagem = (String) request.getAttribute("mensagem"); %>
-        <% ArrayList<Produto> list = (ArrayList<Produto>) request.getAttribute("lista"); %>
-        <% for(Produto category : list) {
-            out.println(category.getId());
-            out.println(category.getDescricao());
-            out.println(category.getPreco());
-        }%>
-        <h1><%= mensagem %></h1>
-        <a href="cadProduto.jsp">Voltar</a>
+        
+        
+        <div class="card">
+            <div class="card-header">
+                <br>
+                <center>
+                    <% String mensagem = (String) request.getAttribute("mensagem"); %>
+                    <% String result = (String) request.getAttribute("result"); 
+                    if(result==null){ 
+                        result = "";
+                    }
+                    %>
+                    <h1><%= mensagem %></h1>
+                </center>
+            </div>
+            <center>
+                <% ArrayList<Produto> list = (ArrayList<Produto>) request.getAttribute("lista"); %>
+                <% for(Produto category : list) {
+                 %>  
+                 <div class="card mt-2" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">id: <%= category.getId() %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= category.getDescricao() %></h6>
+                        <p class="card-text">R$<%= category.getPreco() %></p>
+                        <form>
+                        <a class="btn btn-outline-primary" href="alterarProduto.jsp?id=<%= category.getId() %>">Alterar</a>
+                        <a class="btn btn-outline-danger" href="deletarProduto.jsp?id=<%= category.getId() %>">Deletar</a>
+                        </form>
+                    </div>
+                </div>
+                <%}%>
+                <br />
+                <h2><%= result %></h2>
+                <br />
+                <a class="btn btn-dark mb-5" href="Escolha.jsp">Voltar</a>
+                <br />
+            </center>
+        </div>
     </body>
 </html>

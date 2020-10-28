@@ -36,11 +36,12 @@ public class manterProduto extends HttpServlet {
             throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
         String mensagem = "";
+        String result = null;
         List<Produto> listaProdutos = new ArrayList<>();
         try {
             String opcao = request.getParameter("btnoperacao");
             switch (opcao) {
-                case "cadastrar":
+                case "Cadastrar":
                     {
                         String descricao = request.getParameter("txtdescricao");
                         double preco = Double.parseDouble(request.getParameter("txtpreco"));
@@ -49,20 +50,22 @@ public class manterProduto extends HttpServlet {
                         prod.setPreco(preco);
                         ProdutoDAO pdao = new ProdutoDAO();
                         pdao.cadastrar(prod);
-                        mensagem = "cadastrado com sucesso";
+                        mensagem = "Cadastrar";
+                        result = "Cadastrado com sucesso";
                         break;
                     }
-                case "deletar":
+                case "Deletar":
                     {
                         int id = Integer.parseInt(request.getParameter("txtid"));
                         Produto prod = new Produto();
                         prod.setId(id);
                         ProdutoDAO pdao = new ProdutoDAO();
                         pdao.Deletar(prod);
-                        mensagem = "Deletado com sucesso";
+                        mensagem = "Deletar";
+                        result = "Deletado com sucesso";
                         break;
                     }
-                case "alterar":
+                case "Alterar":
                     {
                         int id = Integer.parseInt(request.getParameter("txtid"));
                         String descricao = request.getParameter("txtdescricao");
@@ -73,20 +76,22 @@ public class manterProduto extends HttpServlet {
                         prod.setPreco(preco);
                         ProdutoDAO pdao = new ProdutoDAO();
                         pdao.alterar(prod);
-                        mensagem = "Alterado com sucesso";
+                        mensagem = "Alterar";
+                        result = "Alterado com sucesso";
                         break;
                     }
-                case "consultar":
+                case "Consultar":
                     {
                         int id = Integer.parseInt(request.getParameter("txtid"));
                         Produto prod = new Produto();
                         prod.setId(id);
                         ProdutoDAO pdao = new ProdutoDAO();
                         Produto resposta = pdao.ConsultarById(prod);
-                        mensagem = resposta.getId() +" "+ resposta.getDescricao()+" "+ resposta.getPreco();
+                        mensagem = "Pesquisar";
+                        result = resposta.getId() +" "+ resposta.getDescricao()+" "+ resposta.getPreco();
                         break;
                     }
-                case "listar":
+                case "Listar":
                     {
                         ProdutoDAO pdao = new ProdutoDAO();
                         listaProdutos = pdao.ConsultarTodos();
@@ -100,6 +105,7 @@ public class manterProduto extends HttpServlet {
             mensagem = "Erro " + ex.getMessage();
         }
         request.setAttribute("mensagem", mensagem);
+        request.setAttribute("result", result);
         request.setAttribute("lista", listaProdutos);
         request.getRequestDispatcher("sucessoProduto.jsp").forward(request, response);
 

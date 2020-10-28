@@ -23,20 +23,14 @@
             <div class="card-body">
                 <center>
                     <form method="post" action="manterProduto">
-                        <input placeholder="ID" type="text" name="txtid">
-                        <br />
                         <input placeholder="Descricao" type="text" name="txtdescricao">
                         <br />
                         <input placeholder="Preço" type="text" name="txtpreco">
                         <br />
                         <br>
-                        <input type="submit" class="btn btn-outline-success" name="btnoperacao" value="cadastrar">
-                        <input type="submit" class="btn btn-outline-danger" name="btnoperacao" value="deletar">
-                        <input type="submit" class="btn btn-outline-primary" name="btnoperacao" value="alterar">
-                        <input type="submit" class="btn btn-outline-warning" name="btnoperacao" value="consultar">
-                        <input type="submit" class="btn btn-dark" name="btnoperacao" value="listar">
+                        <a class="btn btn-dark mr-5" href="Escolha.jsp">Voltar</a>
+                        <input type="submit" class="btn btn-outline-success" name="btnoperacao" value="Cadastrar">
                     </form>
-                    <br>
                 </center>
             </div>
     </body>

@@ -21,11 +21,13 @@
             <br>
             <div class="card-body">
                 <center>
-                    <a class="btn btn-outline-success" href="cadProduto.jsp">Cadastrar</a>
-                    <a class="btn btn-outline-danger" href="cadProduto.jsp">Deletar</a>
-                    <a class="btn btn-outline-primary" href="cadProduto.jsp">Alterar</a>
-                    <a class="btn btn-outline-warning" href="cadProduto.jsp">Pesquisar</a>
-                    <a class="btn btn-dark" href="cadProduto.jsp">Listar Todos</a>
+                    <form action="manterProduto" method="post">
+                    <a class="btn btn-outline-success" href="cadastrarProduto.jsp">Cadastrar</a>
+                    <a class="btn btn-outline-danger" href="deletarProduto.jsp">Deletar</a>
+                    <a class="btn btn-outline-primary" href="alterarProduto.jsp">Alterar</a>
+                    <a class="btn btn-outline-warning" href="pesquisarProduto.jsp">Pesquisar</a>
+                    <input type="submit" class="btn btn-outline-dark" name="btnoperacao" value="Listar">
+                    </form>
                 </center>
             </div>
 
