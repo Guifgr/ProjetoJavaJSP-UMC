@@ -34,6 +34,7 @@
                         <input type="submit" class="btn btn-outline-danger" name="btnoperacao" value="deletar">
                         <input type="submit" class="btn btn-outline-primary" name="btnoperacao" value="alterar">
                         <input type="submit" class="btn btn-outline-warning" name="btnoperacao" value="consultar">
+                        <input type="submit" class="btn btn-dark" name="btnoperacao" value="listar">
                     </form>
                     <br>
                 </center>

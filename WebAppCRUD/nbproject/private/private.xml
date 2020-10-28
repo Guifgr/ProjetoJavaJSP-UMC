@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/guifg/Documents/NetBeansProjects/WebAppCRUD/src/java/dao/ProdutoDAO.java</file>
-            <file>file:/C:/Users/guifg/Documents/NetBeansProjects/WebAppCRUD/web/cadProduto.jsp</file>
+            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/web/cadProduto.jsp</file>
+            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/src/java/controller/manterProduto.java</file>
+            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/src/java/dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/web/sucessoProduto.jsp</file>
         </group>
     </open-files>
 </project-private>

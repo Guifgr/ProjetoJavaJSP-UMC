@@ -9,6 +9,7 @@ import dao.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +36,7 @@ public class manterProduto extends HttpServlet {
             throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
         String mensagem = "";
-        List lista = null;
+        List<Produto> listaProdutos = new ArrayList<>();
         try {
             String opcao = request.getParameter("btnoperacao");
             switch (opcao) {
@@ -85,6 +86,13 @@ public class manterProduto extends HttpServlet {
                         mensagem = resposta.getId() +" "+ resposta.getDescricao()+" "+ resposta.getPreco();
                         break;
                     }
+                case "listar":
+                    {
+                        ProdutoDAO pdao = new ProdutoDAO();
+                        listaProdutos = pdao.ConsultarTodos();
+                        mensagem = "Todos os produtos que foram cadastrados!";
+                        break;
+                    }
                 default:
                     break;
             }
@@ -92,7 +100,7 @@ public class manterProduto extends HttpServlet {
             mensagem = "Erro " + ex.getMessage();
         }
         request.setAttribute("mensagem", mensagem);
-        request.setAttribute("lista", lista);
+        request.setAttribute("lista", listaProdutos);
         request.getRequestDispatcher("sucessoProduto.jsp").forward(request, response);
 
         try (PrintWriter out = response.getWriter()) {
