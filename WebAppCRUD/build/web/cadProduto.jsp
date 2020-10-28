@@ -18,7 +18,7 @@
             <br />
             <input placeholder="Descricao" type="text" name="txtdescricao">
             <br />
-            <input required placeholder="Preço" type="text" name="txtpreco">
+            <input placeholder="Preço" type="text" name="txtpreco">
             <br />
             <input type="submit" name="btnoperacao" value="cadastrar">
             <input type="submit" name="btnoperacao" value="deletar">
