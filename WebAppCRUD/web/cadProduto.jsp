@@ -8,22 +8,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar produto</title>
     </head>
     <body>
-        <h1>Cadastro de produtos</h1>
-        <form method="post" action="manterProduto">
-            <input placeholder="ID" type="text" name="txtid">
-            <br />
-            <input placeholder="Descricao" type="text" name="txtdescricao">
-            <br />
-            <input placeholder="Preço" type="text" name="txtpreco">
-            <br />
-            <input type="submit" name="btnoperacao" value="cadastrar">
-            <input type="submit" name="btnoperacao" value="deletar">
-            <input type="submit" name="btnoperacao" value="alterar">
-            <input type="submit" name="btnoperacao" value="consultar">
-        </form>
+        <div class="card">
+            <div class="card-header">
+                <br>
+                <center><h1>Cadastro de produtos</h1></center>
+            </div>
+            <br>
+            <div class="card-body">
+                <center>
+                    <form method="post" action="manterProduto">
+                        <input placeholder="ID" type="text" name="txtid">
+                        <br />
+                        <input placeholder="Descricao" type="text" name="txtdescricao">
+                        <br />
+                        <input placeholder="Preço" type="text" name="txtpreco">
+                        <br />
+                        <br>
+                        <input type="submit" class="btn btn-outline-success" name="btnoperacao" value="cadastrar">
+                        <input type="submit" class="btn btn-outline-danger" name="btnoperacao" value="deletar">
+                        <input type="submit" class="btn btn-outline-primary" name="btnoperacao" value="alterar">
+                        <input type="submit" class="btn btn-outline-warning" name="btnoperacao" value="consultar">
+                    </form>
+                    <br>
+                </center>
+            </div>
     </body>
 </html>
+      
