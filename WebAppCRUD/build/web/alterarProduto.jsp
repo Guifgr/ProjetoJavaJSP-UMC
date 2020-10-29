@@ -28,6 +28,7 @@
                 <center>
                     <form method="post" action="manterProduto">
                         
+                        <input placeholder="ID" type="text" name="txtid" value="<%= id %>">
                         <br />
                         <input placeholder="Descricao" type="text" name="txtdescricao">
                         <br />
