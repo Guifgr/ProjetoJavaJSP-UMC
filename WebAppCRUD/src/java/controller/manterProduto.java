@@ -60,9 +60,16 @@ public class manterProduto extends HttpServlet {
                         Produto prod = new Produto();
                         prod.setId(id);
                         ProdutoDAO pdao = new ProdutoDAO();
+                        Produto resposta = pdao.ConsultarById(prod);
+
+                        if(resposta.getDescricao() == null){
+                            result = "Não foi encontrado, impossivel alterar";
+                        }else{
+                        prod.setId(id);
                         pdao.Deletar(prod);
                         mensagem = "Deletar";
                         result = "Deletado com sucesso";
+                        }
                         break;
                     }
                 case "Alterar":
