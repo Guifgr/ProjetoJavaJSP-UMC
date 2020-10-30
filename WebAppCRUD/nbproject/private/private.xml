@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/web/alterarProduto.jsp</file>
-            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/web/deletarProduto.jsp</file>
-            <file>file:/C:/Users/guifg/Documents/GitHub/ProjetoJava4sem/WebAppCRUD/src/java/dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/taina/OneDrive/Documentos/GitHub/ProjetoJava4sem/WebAppCRUD/web/pesquisarProduto.jsp</file>
+            <file>file:/C:/Users/taina/OneDrive/Documentos/GitHub/ProjetoJava4sem/WebAppCRUD/web/Escolha.jsp</file>
+            <file>file:/C:/Users/taina/OneDrive/Documentos/GitHub/ProjetoJava4sem/WebAppCRUD/src/java/controller/manterProduto.java</file>
+            <file>file:/C:/Users/taina/OneDrive/Documentos/GitHub/ProjetoJava4sem/WebAppCRUD/web/alterarProduto.jsp</file>
+            <file>file:/C:/Users/taina/OneDrive/Documentos/GitHub/ProjetoJava4sem/WebAppCRUD/web/sucessoProduto.jsp</file>
         </group>
     </open-files>
 </project-private>
