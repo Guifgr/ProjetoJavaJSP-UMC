@@ -67,17 +67,25 @@ public class manterProduto extends HttpServlet {
                     }
                 case "Alterar":
                     {
+                        mensagem = "Alterar";
+
                         int id = Integer.parseInt(request.getParameter("txtid"));
-                        String descricao = request.getParameter("txtdescricao");
-                        double preco = Double.parseDouble(request.getParameter("txtpreco"));
                         Produto prod = new Produto();
                         prod.setId(id);
-                        prod.setDescricao(descricao);
-                        prod.setPreco(preco);
                         ProdutoDAO pdao = new ProdutoDAO();
-                        pdao.alterar(prod);
-                        mensagem = "Alterar";
-                        result = "Alterado com sucesso";
+                        Produto resposta = pdao.ConsultarById(prod);
+
+                        if(resposta.getDescricao() == null){
+                            result = "Não foi encontrado, impossivel alterar";
+                        }else{
+                            String descricao = request.getParameter("txtdescricao");
+                            double preco = Double.parseDouble(request.getParameter("txtpreco"));
+                            prod.setDescricao(descricao);
+                            prod.setPreco(preco);
+                            pdao.alterar(prod);
+                            result = "Alterado com sucesso";
+                        }
+                        
                         break;
                     }
                 case "Consultar":
