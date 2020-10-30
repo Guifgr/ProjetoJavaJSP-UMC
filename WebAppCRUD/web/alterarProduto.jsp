@@ -30,12 +30,12 @@
                         
                         <input placeholder="ID" type="text" name="txtid" value="<%= id %>">
                         <br />
-                        <input placeholder="Descricao" type="text" name="txtdescricao">
+                        <input placeholder="Produto" type="text" name="txtdescricao">
                         <br />
                         <input placeholder="Preço" type="text" name="txtpreco">
                         <br />
                         <br>
-                        <a class="btn btn-dark mr-5" href="Escolha.jsp">Voltar</a>
+                        <a class="btn btn-outline-dark mr-5" href="Escolha.jsp">Voltar</a>
                         <input type="submit" class="btn btn-outline-primary" name="btnoperacao" value="Alterar">
                     </form>
                 </center>

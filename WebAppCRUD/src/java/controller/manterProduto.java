@@ -51,7 +51,7 @@ public class manterProduto extends HttpServlet {
                         ProdutoDAO pdao = new ProdutoDAO();
                         pdao.cadastrar(prod);
                         mensagem = "Cadastrar";
-                        result = "Cadastrado com sucesso";
+                        result = "Produto cadastrado com sucesso!";
                         break;
                     }
                 case "Deletar":
@@ -63,12 +63,12 @@ public class manterProduto extends HttpServlet {
                         Produto resposta = pdao.ConsultarById(prod);
 
                         if(resposta.getDescricao() == null){
-                            result = "Não foi encontrado, impossivel alterar";
+                            result = "Não foi encontrado, impossivel deletar!";
                         }else{
                         prod.setId(id);
                         pdao.Deletar(prod);
                         mensagem = "Deletar";
-                        result = "Deletado com sucesso";
+                        result = "Deletado com sucesso!";
                         }
                         break;
                     }
@@ -83,14 +83,14 @@ public class manterProduto extends HttpServlet {
                         Produto resposta = pdao.ConsultarById(prod);
 
                         if(resposta.getDescricao() == null){
-                            result = "Não foi encontrado, impossivel alterar";
+                            result = "Não foi encontrado, impossivel alterar!";
                         }else{
                             String descricao = request.getParameter("txtdescricao");
                             double preco = Double.parseDouble(request.getParameter("txtpreco"));
                             prod.setDescricao(descricao);
                             prod.setPreco(preco);
                             pdao.alterar(prod);
-                            result = "Alterado com sucesso";
+                            result = "Alterado com sucesso!";
                         }
                         
                         break;
@@ -103,12 +103,13 @@ public class manterProduto extends HttpServlet {
                         ProdutoDAO pdao = new ProdutoDAO();
                         Produto resposta = pdao.ConsultarById(prod);
                         mensagem = "Pesquisar";
-                        result = resposta.getId() +" "+ resposta.getDescricao()+" "+ resposta.getPreco();
+                        listaProdutos.add(resposta);
                         if(resposta.getDescricao() == null){
-                            result = "Não foi encontrado";
+                            result = "Não foi encontrado!";
                         }
                         break;
                     }
+                    
                 case "Listar":
                     {
                         ProdutoDAO pdao = new ProdutoDAO();

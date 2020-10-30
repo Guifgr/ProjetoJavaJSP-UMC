@@ -30,7 +30,7 @@
                         <input placeholder="ID" type="text" name="txtid" value="<%= id %>">
                         <br>
                         <br>
-                        <a class="btn btn-dark mr-5" href="Escolha.jsp">Voltar</a>
+                        <a class="btn btn-outline-dark mr-5" href="Escolha.jsp">Voltar</a>
                         <input type="submit" class="btn btn-outline-danger" name="btnoperacao" value="Deletar">
                     </form>
                 </center>

@@ -26,7 +26,7 @@
                     <a class="btn btn-outline-danger" href="deletarProduto.jsp">Deletar</a>
                     <a class="btn btn-outline-primary" href="alterarProduto.jsp">Alterar</a>
                     <a class="btn btn-outline-warning" href="pesquisarProduto.jsp">Pesquisar</a>
-                    <input type="submit" class="btn btn-outline-dark" name="btnoperacao" value="Listar">
+                    <input class="btn btn-outline-dark" type="submit" name="btnoperacao" value="Listar">
                     </form>
                 </center>
             </div>
