@@ -89,6 +89,9 @@ public class manterProduto extends HttpServlet {
                         Produto resposta = pdao.ConsultarById(prod);
                         mensagem = "Pesquisar";
                         result = resposta.getId() +" "+ resposta.getDescricao()+" "+ resposta.getPreco();
+                        if(resposta.getDescricao() == null){
+                            result = "Não foi encontrado";
+                        }
                         break;
                     }
                 case "Listar":
