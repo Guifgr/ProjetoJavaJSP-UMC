@@ -52,10 +52,16 @@ public class manterProduto extends HttpServlet {
                         pdao.cadastrar(prod);
                         mensagem = "Cadastrar";
                         result = "Produto cadastrado com sucesso!";
+                        
+                        ProdutoDAO lista = new ProdutoDAO();
+                        listaProdutos = lista.ConsultarTodos();
+                        mensagem = "Listar todos!";
+                        
                         break;
                     }
                 case "Deletar":
-                    {
+                    {   
+                        
                         int id = Integer.parseInt(request.getParameter("txtid"));
                         Produto prod = new Produto();
                         prod.setId(id);
@@ -70,6 +76,11 @@ public class manterProduto extends HttpServlet {
                         mensagem = "Deletar";
                         result = "Deletado com sucesso!";
                         }
+                        
+                        ProdutoDAO lista = new ProdutoDAO();
+                        listaProdutos = lista.ConsultarTodos();
+                        mensagem = "Listar todos!";
+                        
                         break;
                     }
                 case "Alterar":
@@ -92,6 +103,9 @@ public class manterProduto extends HttpServlet {
                             pdao.alterar(prod);
                             result = "Alterado com sucesso!";
                         }
+                        ProdutoDAO lista = new ProdutoDAO();
+                        listaProdutos = lista.ConsultarTodos();
+                        mensagem = "Listar todos!";
                         
                         break;
                     }
@@ -114,7 +128,7 @@ public class manterProduto extends HttpServlet {
                     {
                         ProdutoDAO pdao = new ProdutoDAO();
                         listaProdutos = pdao.ConsultarTodos();
-                        mensagem = "Todos os produtos que foram cadastrados!";
+                        mensagem = "Listar todos!";
                         break;
                     }
                 default:

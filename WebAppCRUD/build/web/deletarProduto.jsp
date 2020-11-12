@@ -27,7 +27,7 @@
                     }
                     %>
                     <form method="post" action="manterProduto">
-                        <input placeholder="ID" type="text" name="txtid" value="<%= id %>">
+                        <input placeholder="ID" type="text" name="txtid">
                         <br>
                         <br>
                         <a class="btn btn-outline-dark mr-5" href="Escolha.jsp">Voltar</a>

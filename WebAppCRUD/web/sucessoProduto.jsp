@@ -32,6 +32,7 @@
                 </center>
             </div>
             <center>
+                <h2><%= result%></h2>
                 <% ArrayList<Produto> list = (ArrayList<Produto>) request.getAttribute("lista"); %>
                 <% for (Produto category : list) {
                 %>  
@@ -42,14 +43,12 @@
                         <p class="card-text">R$<%= category.getPreco()%></p>
                         <form>
                             <a class="btn btn-outline-primary" href="alterarProduto.jsp?id=<%= category.getId()%>">Alterar</a>
-                            <a class="btn btn-outline-danger" href="deletarProduto.jsp?id=<%= category.getId()%>">Deletar</a>
+                            <a class="btn btn-outline-danger" href="http://localhost:8084/WebAppCRUD/manterProduto?btnoperacao=Deletar&txtid=<%= category.getId()%>">Deletar</a>
                         </form>
                     </div>
                 </div>
                 <%}%>
                 <br />
-                <h2><%= result%></h2>
-
                 <a class="btn btn-outline-dark" href="Escolha.jsp">Voltar</a>
                 <br />
                 <br />
