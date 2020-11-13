@@ -32,6 +32,7 @@
                 </center>
             </div>
             <center>
+                
                 <h2><%= result%></h2>
                 <% ArrayList<Produto> list = (ArrayList<Produto>) request.getAttribute("lista"); %>
                 <% for (Produto category : list) {
@@ -52,6 +53,7 @@
                 <a class="btn btn-outline-dark" href="Escolha.jsp">Voltar</a>
                 <br />
                 <br />
+                
             </center>
         </div>
     </body>
