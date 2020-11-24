@@ -39,7 +39,7 @@ public class ProdutoDAO {
 
         String sql =  "select id, descricao, preco from produtos where id = ?";
         PreparedStatement comando = con.prepareStatement(sql);
-        comando.setDouble(1, prod.getCodigoDeBarras());
+        comando.setInt(1, prod.getCodigoDeBarras());
         
         ResultSet resultado = comando.executeQuery(); 
         Produto p  = new Produto();
