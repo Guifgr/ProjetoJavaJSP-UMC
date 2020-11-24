@@ -44,11 +44,18 @@ public class manterProduto extends HttpServlet {
                 
                 case "Cadastrar":
                     {
+                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtcodigodebarras"));
                         String descricao = request.getParameter("txtdescricao");
                         double preco = Double.parseDouble(request.getParameter("txtpreco"));
+                        String marca = request.getParameter("txtmarca");
+                        String fornecedor = request.getParameter("txtfornecedor");
+                        
                         Produto prod = new Produto();
+                        prod.setCodigoDeBarras(codigoDeBarras);
                         prod.setDescricao(descricao);
                         prod.setPreco(preco);
+                        prod.setMarca(marca);
+                        prod.setFornecedor(fornecedor);
                         ProdutoDAO pdao = new ProdutoDAO();
                         pdao.cadastrar(prod);
                         mensagem = "Cadastrar";
@@ -59,16 +66,16 @@ public class manterProduto extends HttpServlet {
                 case "Deletar":
                     {   
                         
-                        int id = Integer.parseInt(request.getParameter("txtid"));
+                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtcodigodebarras"));
                         Produto prod = new Produto();
-                        prod.setId(id);
+                        prod.setCodigoDeBarras(codigoDeBarras);
                         ProdutoDAO pdao = new ProdutoDAO();
                         Produto resposta = pdao.ConsultarById(prod);
 
                         if(resposta.getDescricao() == null){
                             result = "Não foi encontrado, impossivel deletar!";
                         }else{
-                        prod.setId(id);
+                        prod.setCodigoDeBarras(codigoDeBarras);
                         pdao.Deletar(prod);
                         mensagem = "Deletar";
                         result = "Deletado com sucesso!";
@@ -81,9 +88,9 @@ public class manterProduto extends HttpServlet {
                     {
                         mensagem = "Alterar";
 
-                        int id = Integer.parseInt(request.getParameter("txtid"));
+                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtCodigoDeBarras"));
                         Produto prod = new Produto();
-                        prod.setId(id);
+                        prod.setCodigoDeBarras(codigoDeBarras);
                         ProdutoDAO pdao = new ProdutoDAO();
                         Produto resposta = pdao.ConsultarById(prod);
 
@@ -93,8 +100,12 @@ public class manterProduto extends HttpServlet {
                         }else{
                             String descricao = request.getParameter("txtdescricao");
                             double preco = Double.parseDouble(request.getParameter("txtpreco"));
+                            String marca = request.getParameter("txtmarca");
+                            String fornecedor = request.getParameter("txtfornecedor");
                             prod.setDescricao(descricao);
                             prod.setPreco(preco);
+                            prod.setMarca(marca);
+                            prod.setFornecedor(fornecedor);
                             pdao.alterar(prod);
                             result = "Alterado com sucesso!";
                         }
@@ -103,9 +114,9 @@ public class manterProduto extends HttpServlet {
                     }
                 case "Consultar":
                     {
-                        int id = Integer.parseInt(request.getParameter("txtid"));
+                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtcodigodebarras"));
                         Produto prod = new Produto();
-                        prod.setId(id);
+                        prod.setCodigoDeBarras(codigoDeBarras);
                         ProdutoDAO pdao = new ProdutoDAO();
                         Produto resposta = pdao.ConsultarById(prod);
                         mensagem = "Pesquisar";
