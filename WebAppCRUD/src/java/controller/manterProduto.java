@@ -65,7 +65,6 @@ public class manterProduto extends HttpServlet {
                     }
                 case "Deletar":
                     {   
-                        
                         int codigoDeBarras = Integer.parseInt(request.getParameter("txtcodigodebarras"));
                         Produto prod = new Produto();
                         prod.setCodigoDeBarras(codigoDeBarras);
@@ -75,20 +74,18 @@ public class manterProduto extends HttpServlet {
                         if(resposta.getDescricao() == null){
                             result = "Não foi encontrado, impossivel deletar!";
                         }else{
-                        prod.setCodigoDeBarras(codigoDeBarras);
-                        pdao.Deletar(prod);
-                        mensagem = "Deletar";
-                        result = "Deletado com sucesso!";
+                            prod.setCodigoDeBarras(codigoDeBarras);
+                            pdao.Deletar(prod);
+                            mensagem = "Deletar";
+                            result = "Deletado com sucesso!";
                         }
-                     
-                        
                         break;
                     }
                 case "Alterar":
                     {
                         mensagem = "Alterar";
 
-                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtCodigoDeBarras"));
+                        int codigoDeBarras = Integer.parseInt(request.getParameter("txtcodigodebarras"));
                         Produto prod = new Produto();
                         prod.setCodigoDeBarras(codigoDeBarras);
                         ProdutoDAO pdao = new ProdutoDAO();
@@ -96,7 +93,6 @@ public class manterProduto extends HttpServlet {
 
                         if(resposta.getDescricao() == null){
                             result = "Não foi encontrado, impossivel alterar!";
-                            
                         }else{
                             String descricao = request.getParameter("txtdescricao");
                             double preco = Double.parseDouble(request.getParameter("txtpreco"));

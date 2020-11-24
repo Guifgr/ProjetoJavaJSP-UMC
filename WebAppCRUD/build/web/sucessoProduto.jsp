@@ -39,12 +39,29 @@
                 %>  
                 <div class="card mt-2" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">id: <%= category.getId()%></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><%= category.getDescricao()%></h6>
-                        <p class="card-text">R$<%= category.getPreco()%></p>
-                        <form>
-                            <a class="btn btn-outline-primary" href="alterarProduto.jsp?id=<%= category.getId()%>">Alterar</a>
-                            <a class="btn btn-outline-danger" href="http://localhost:8084/WebAppCRUD/manterProduto?btnoperacao=Deletar&txtid=<%= category.getId()%>">Deletar</a>
+                        <form method="post" action="manterProduto">
+                            Código de barras
+                            <br />
+                            <input placeholder="Codigo De Barras" type="text" name="txtcodigodebarras" value="<%= category.getCodigoDeBarras()%>" readonly>
+                            <br />
+                            Descrição
+                            <br />
+                            <input placeholder="Nome do produto" type="text" name="txtdescricao" value="<%= category.getDescricao()%>">
+                            <br />
+                            Preço
+                            <br />
+                            <input placeholder="Preço" type="text" name="txtpreco" value="<%= category.getPreco()%>">
+                            <br />
+                            Marca
+                            <br />
+                            <input placeholder="Marca" type="text" name="txtmarca" value="<%= category.getMarca()%>">
+                            <br />
+                            Fornecedor
+                            <br />
+                            <input placeholder="Fornecedor" type="text" name="txtfornecedor" value="<%= category.getFornecedor()%>">
+                            <br><br>
+                            <input type="submit" class="btn btn-outline-primary" name="btnoperacao" value="Alterar">
+                            <a class="btn btn-outline-danger" href="http://localhost:8084/WebAppCRUD/manterProduto?btnoperacao=Deletar&txtcodigodebarras=<%= category.getCodigoDeBarras()%>">Deletar</a>
                         </form>
                     </div>
                 </div>

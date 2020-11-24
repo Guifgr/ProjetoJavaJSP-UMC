@@ -27,12 +27,15 @@
             <div class="card-body">
                 <center>
                     <form method="post" action="manterProduto">
-                        
-                        <input placeholder="ID" type="text" name="txtid" value="<%= id %>">
+                        <input placeholder="Codigo De Barras" type="text" name="txtcodigodebarras">
                         <br />
-                        <input placeholder="Produto" type="text" name="txtdescricao">
+                        <input placeholder="Nome do produto" type="text" name="txtdescricao">
                         <br />
                         <input placeholder="Preço" type="text" name="txtpreco">
+                        <br />
+                        <input placeholder="Marca" type="text" name="txtmarca">
+                        <br />
+                        <input placeholder="Fornecedor" type="text" name="txtfornecedor">
                         <br />
                         <br>
                         <a class="btn btn-outline-dark mr-5" href="Escolha.jsp">Voltar</a>

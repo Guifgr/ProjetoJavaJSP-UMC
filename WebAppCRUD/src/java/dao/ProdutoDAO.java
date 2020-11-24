@@ -37,7 +37,7 @@ public class ProdutoDAO {
     public Produto ConsultarById(Produto prod) throws ClassNotFoundException, SQLException{
         Connection con = FabricaConexao.getConexao();
 
-        String sql =  "select id, descricao, preco from produtos where id = ?";
+        String sql =  "select codigodebarras, descricao, preco, marca, fornecedor from produtos where codigodebarras = ?";
         PreparedStatement comando = con.prepareStatement(sql);
         comando.setInt(1, prod.getCodigoDeBarras());
         
@@ -54,7 +54,7 @@ public class ProdutoDAO {
     }
     public List ConsultarTodos() throws ClassNotFoundException, SQLException{
         Connection con = FabricaConexao.getConexao();
-        String sql =  "select id, descricao, preco from produtos";
+        String sql =  "select codigodebarras, descricao, preco, marca, fornecedor from produtos";
         PreparedStatement comando = con.prepareStatement(sql);
         
         ResultSet resultado = comando.executeQuery(); 
@@ -72,7 +72,7 @@ public class ProdutoDAO {
     }
     public void Deletar(Produto prod) throws ClassNotFoundException, SQLException{
         Connection con = FabricaConexao.getConexao();
-        String sql =  "delete from produtos where id = ?";
+        String sql =  "delete from produtos where codigodebarras = ?";
         PreparedStatement comando = con.prepareStatement(sql);
         comando.setInt(1, prod.getCodigoDeBarras());
         comando.execute();
