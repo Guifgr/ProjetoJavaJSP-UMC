@@ -17,30 +17,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span> <a class="navbar-brand" href="#">Selecionar Produtos</a>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastrarProduto.jsp">Cadastrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="deletarProduto.jsp">Deletar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alterarProduto.jsp">Alterar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pesquisarProduto.jsp">Pesquisar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alterarProduto.jsp">Sobre</a>
-                    </li>
-                </ul>
-            </div>  
-        </nav>
+        <jsp:include page="_navBar.jsp" />
         
         <% String id = (String) request.getParameter("id"); 
                     if(id==null){ 
