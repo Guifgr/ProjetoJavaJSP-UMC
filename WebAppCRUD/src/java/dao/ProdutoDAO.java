@@ -52,7 +52,7 @@ public class ProdutoDAO {
         }
         return p;
     }
-    public List ConsultarTodos() throws ClassNotFoundException, SQLException{
+    public List<Produto> ConsultarTodos() throws ClassNotFoundException, SQLException{
         Connection con = FabricaConexao.getConexao();
         String sql =  "select codigodebarras, descricao, preco, marca, fornecedor from produtos";
         PreparedStatement comando = con.prepareStatement(sql);
