@@ -7,4 +7,4 @@ Projeto UMC
     <td align="center"><a href="https://github.com/rovica"><img src="https://avatars2.githubusercontent.com/u/54681116?v=4" width="100px;" alt=""/><br /><sub><b>Rômulo Villar</b></sub></a><br /></td>
   </tr>
 </table>
-<p>Nota 10 meu amigo 2x ainda 💖</p>
+<p>Nota 10 meu amigo 3x ainda 💖</p>
